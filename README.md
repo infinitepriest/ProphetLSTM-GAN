@@ -266,10 +266,10 @@ Start Jupyter Notebook and open the notebooks one-by-one, 00, 01, and 02.
 
 ## Evaluation Metrics
 
-- ROC / AUC
-- False Alarm Rate
-- **Detection Latency**
-- Reconstruction Error Visualization
+- ROC / AUC.
+- False Alarm Rate.
+- **Detection Latency**.
+- Reconstruction Error Visualization.
 
 ---
 
@@ -282,10 +282,10 @@ Start Jupyter Notebook and open the notebooks one-by-one, 00, 01, and 02.
 
 ### Key Improvements
 
-- **AUC +3.7%**  
-- **True anomalies detected: +4**  
-- **Better sensitivity to drift-induced anomalies**  
-- **False-positive rate remains extremely low (~0.01%)**  
+- **AUC +3.7%**.  
+- **True anomalies detected: +4**.  
+- **Better sensitivity to drift-induced anomalies**.  
+- **False-positive rate remains extremely low (~0.01%)**.  
 
 ---
 
@@ -293,9 +293,10 @@ Start Jupyter Notebook and open the notebooks one-by-one, 00, 01, and 02.
 
 ### 1. LSTM-GAN DR-Score Performance
 The DR-score captures short-window anomalous behavior using reconstruction error and discriminator realism.
-- **ROC AUC:** 0.6593  
-- **F1-score:** 0.0747  
-- **Threshold:** 1.884655  
+
+- **ROC AUC:** 0.6593.  
+- **F1-score:** 0.0747.  
+- **Threshold:** 1.884655.  
 - **Confusion Matrix:**  
   - TN: 401318  
   - FP: 1  
@@ -306,13 +307,15 @@ This detector is extremely conservative (almost zero false alarms) but catches h
 
 ### 2. Trend-Residual Score (EMA-Based)
 EMA trend residual captures slow drifts that GAN alone cannot detect.
-- **Window-level residual score aligned with X_test**
-- **Smooth behavior in normal windows**
-- **Stronger response around drift-induced anomalies**
+
+- **Window-level residual score aligned with X_test.**
+- **Smooth behavior in normal windows.**
+- **Stronger response around drift-induced anomalies.**
 
 
 ### 3. HybridScore (DR + Trend Residual)
 Combining short-term and long-term anomaly cues improves separability.
+
 - **ROC AUC:** 0.6967  
 - **F1-score:** 0.0771  
 - **Threshold:** 0.126540  
@@ -323,10 +326,11 @@ Combining short-term and long-term anomaly cues improves separability.
   - TP: 77  
 
 Improvement highlights:
-- **AUC Gain:** +0.0374  
-- **True anomalies detected:** +4  
-- **Recall improved from 3.88% → 4.09%**  
-- **Still extremely low FP rate (~0.01%)**
+
+- **AUC Gain:** +0.0374.  
+- **True anomalies detected:** +4.  
+- **Recall improved from 3.88% → 4.09%.**  
+- **Still extremely low FP rate (~0.01%)**.
 
 ### **Note on Improvement Magnitude**
 
@@ -335,10 +339,10 @@ The absolute improvement in AUC (~+3.7%) may appear modest at first glance, but 
 Importantly, the hybrid score increases anomaly recall (TP: 73 → 77) while keeping the false-positive rate extremely low relative to the large normal class. This reflects the intended design goal of the hybrid scoring scheme: improving sensitivity to subtle drift-induced anomalies without significantly degrading precision.
 
 ### 4. Timeline Behavior
-- DR-score shows sharp spikes for high-severity anomalies  
-- Hybrid score captures both sharp spikes *and* slow drifts  
-- Threshold lines cleanly separate normal vs anomaly behavior  
-- Visual confirmation of increase in true positive detection  
+- DR-score shows sharp spikes for high-severity anomalies.  
+- Hybrid score captures both sharp spikes *and* slow drifts.  
+- Threshold lines cleanly separate normal vs anomaly behavior.  
+- Visual confirmation of increase in true positive detection.  
 
 ### Final Interpretation
 The hybrid pipeline significantly enhances anomaly separability without compromising stability, delivering a more expressive unsupervised FDD system than DR-score alone.
