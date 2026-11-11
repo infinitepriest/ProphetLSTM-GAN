@@ -7,7 +7,7 @@ ProphetLSTM-GAN is an unsupervised anomaly detection framework for liquid rocket
 
 ## Authors
 - **[Avantika Bharat Patil (Patil0601)](https://github.com/Patil0601)**
-- **[Ayushman M. (aymisxx)](https://github.com/aymisxx)**
+- **[Ayushman M. (infinitepriest)](https://github.com/infinitepriest)**
 - **[Yashwanth Gowda (yashwanthgowdanm)](https://github.com/yashwanthgowdanm)**
 - **[Rajeev Tidke (rajeevtidke)](https://github.com/rajeevtidke)**
 - **[Pritam Modak (pmodak1)](https://github.com/pmodak1)**
